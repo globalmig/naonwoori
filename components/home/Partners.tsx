@@ -6,6 +6,9 @@ import { motion, useReducedMotion } from "framer-motion";
 const PARTNERS = [
   { name: "Hyundai", src: "/images/partner/ref-hyundai.png" },
   { name: "Kia", src: "/images/partner/ref-kia.png" },
+  { name: "Cheil", src: "/images/partner/ref-cheil.png" },
+  { name: "Genesis", src: "/images/partner/ref-genesis.png" },
+  { name: "Innocean", src: "/images/partner/ref-innocean.png" },
   { name: "Cadillac", src: "/images/partner/ref-cadillac.png" },
   { name: "Mercedes-Benz", src: "/images/partner/ref-mercedes.png" },
   { name: "Porsche", src: "/images/partner/ref-porsche.png" },
