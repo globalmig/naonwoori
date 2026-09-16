@@ -67,7 +67,7 @@ export default function Contact() {
             <input
               id="reply"
               name="reply"
-              type="text"
+              type="email"
               placeholder="회신 받을 메일주소를 입력해주세요."
               required
               className="w-full border border-[#b9b9b9] px-4.5 py-4 text-base text-ink outline-none transition-colors focus:border-brand focus:shadow-[0_0_0_1px_var(--color-naonwoori-brown)]"

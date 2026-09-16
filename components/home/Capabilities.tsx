@@ -28,16 +28,18 @@ export default function Capabilities() {
 
       <ul className="list-none border-t border-(--line) p-0">
         {CAPABILITIES.map((item) => (
-          <Reveal key={item.no}>
-            <li className="grid grid-cols-[44px_1fr] items-center gap-5 border-b border-(--line) py-6 transition-[color,background-color,padding] duration-250 hover:bg-brand-sub-light hover:px-2.5 hover:text-brand md:min-h-33 md:grid-cols-[90px_1fr_minmax(260px,0.8fr)] md:py-0 md:hover:px-5">
-              <span className="text-xs tracking-[0.15em]">{item.no}</span>
-              <h3 className="m-0 text-[clamp(29px,4vw,63px)] font-medium leading-none tracking-[-0.04em]">
-                {item.title}
-              </h3>
-              <p className="col-start-2 m-0 text-[15px] leading-[1.7] md:col-span-1 md:col-start-auto">
-                {item.desc}
-              </p>
-            </li>
+          <Reveal
+            key={item.no}
+            as="li"
+            className="grid grid-cols-[44px_1fr] items-center gap-5 border-b border-(--line) py-6 transition-[color,background-color,padding] duration-250 hover:bg-brand-sub-light hover:px-2.5 hover:text-brand md:min-h-33 md:grid-cols-[90px_1fr_minmax(260px,0.8fr)] md:py-0 md:hover:px-5"
+          >
+            <span className="text-xs tracking-[0.15em]">{item.no}</span>
+            <h3 className="m-0 text-[clamp(29px,4vw,63px)] font-medium leading-none tracking-[-0.04em]">
+              {item.title}
+            </h3>
+            <p className="col-start-2 m-0 text-[15px] leading-[1.7] md:col-span-1 md:col-start-auto">
+              {item.desc}
+            </p>
           </Reveal>
         ))}
       </ul>

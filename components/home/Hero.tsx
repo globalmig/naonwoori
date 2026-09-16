@@ -12,7 +12,7 @@ const HERO_SLIDES = [
 
 export default function Hero() {
   return (
-    <main
+    <section
       id="top"
       aria-label="나온우리 소개"
       className="relative isolate [--hero-h:calc(100svh-76px)] min-h-(--hero-h) overflow-hidden bg-[#181513] text-white md:[--hero-h:calc(100svh-94px)]"
@@ -66,6 +66,6 @@ export default function Hero() {
       </div>
       <div className="absolute inset-0 z-[-2] bg-[linear-gradient(90deg,rgba(24,21,19,.83)_0%,rgba(24,21,19,.42)_58%,rgba(24,21,19,.2)_100%)]" />
       <div className="absolute inset-0 z-[-1] bg-[linear-gradient(0deg,rgba(24,21,19,.55),transparent_45%)]" />
-    </main>
+    </section>
   );
 }

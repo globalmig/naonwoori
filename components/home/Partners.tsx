@@ -22,6 +22,11 @@ export default function Partners() {
       aria-label="주요 파트너"
       className="overflow-hidden py-13.5"
     >
+      <ul className="sr-only">
+        {PARTNERS.map((partner) => (
+          <li key={partner.name}>{partner.name}</li>
+        ))}
+      </ul>
 
       <div className="overflow-hidden">
         <motion.div

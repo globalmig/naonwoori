@@ -37,7 +37,7 @@ export default function Header() {
       >
         <Image
           src="/images/logo-brown.svg"
-          alt="naonwoori"
+          alt=""
           width={180}
           height={24}
           className="h-auto w-full"
@@ -85,6 +85,7 @@ export default function Header() {
       <nav
         id="main-nav"
         aria-label="주요 메뉴"
+        inert={!open}
         className={`fixed inset-y-0 right-0 z-50 flex w-3/4 max-w-xs flex-col gap-0 bg-white pt-19 shadow-xl transition-transform duration-300 ease-out md:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}

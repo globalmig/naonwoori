@@ -3,15 +3,21 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+const MOTION_TAG = { div: motion.div, li: motion.li } as const;
+
 export default function Reveal({
   children,
   className,
+  as = "div",
 }: {
   children: ReactNode;
   className?: string;
+  as?: "div" | "li";
 }) {
+  const MotionTag = MOTION_TAG[as];
+
   return (
-    <motion.div
+    <MotionTag
       className={className}
       initial={{ opacity: 0, y: 25 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -19,6 +25,6 @@ export default function Reveal({
       transition={{ duration: 0.75, ease: "easeOut" }}
     >
       {children}
-    </motion.div>
+    </MotionTag>
   );
 }
