@@ -24,7 +24,7 @@ export default function Contact() {
       className="bg-white px-5.5 pb-12.5 pt-22.5 md:px-(--side) md:pt-[clamp(90px,12vw,180px)]"
     >
       <Reveal className="grid grid-cols-1 gap-13.5">
-        <h2 className="m-0 text-[clamp(52px,9vw,145px)] font-semibold leading-[0.87] tracking-[-0.075em]">
+        <h2 className="m-0 text-[clamp(52px,9vw,145px)] font-[650] leading-[0.87] tracking-[-0.075em]">
           Contact us.
         </h2>
 
@@ -109,7 +109,7 @@ export default function Contact() {
             type="submit"
             className="min-w-55 justify-self-start border border-ink bg-ink px-6 py-4.25 text-[15px] font-semibold text-white transition-colors hover:bg-white hover:text-ink"
           >
-            SEND →
+            SEND INQUIRY →
           </button>
         </form>
       </Reveal>

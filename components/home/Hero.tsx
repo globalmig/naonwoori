@@ -12,9 +12,10 @@ const HERO_SLIDES = [
 
 export default function Hero() {
   return (
-    <section
+    <main
+      id="top"
       aria-label="나온우리 소개"
-      className="relative isolate min-h-[calc(100svh-76px)] overflow-hidden bg-[#181513] text-white md:min-h-[calc(100svh-94px)]"
+      className="relative isolate [--hero-h:calc(100svh-76px)] min-h-(--hero-h) overflow-hidden bg-[#181513] text-white md:[--hero-h:calc(100svh-94px)]"
     >
       <Slider
         dots={false}
@@ -28,7 +29,7 @@ export default function Hero() {
         pauseOnHover={false}
         slidesToShow={1}
         slidesToScroll={1}
-        className="absolute inset-0 z-[-3] h-full [&_.slick-list]:h-full [&_.slick-slide>div]:h-full [&_.slick-slide]:h-full [&_.slick-track]:h-full"
+        className="absolute inset-0 z-[-3] h-(--hero-h) [&_.slick-list]:h-full [&_.slick-slide>div]:h-full [&_.slick-slide]:h-full [&_.slick-track]:h-full"
       >
         {HERO_SLIDES.map((slide) => (
           <div key={slide.src} className="relative h-full w-full">
@@ -43,10 +44,7 @@ export default function Hero() {
           </div>
         ))}
       </Slider>
-      <div className="absolute inset-0 z-[-2] bg-[linear-gradient(90deg,rgba(24,21,19,.83)_0%,rgba(24,21,19,.42)_58%,rgba(24,21,19,.2)_100%)]" />
-      <div className="absolute inset-0 z-[-1] bg-[linear-gradient(0deg,rgba(24,21,19,.55),transparent_45%)]" />
-
-      <div className="flex min-h-[calc(100svh-76px)] flex-col justify-between px-5.5 pb-9 pt-13.5 md:min-h-[calc(100svh-94px)] md:px-(--side) md:pb-9 md:pt-[clamp(42px,7vh,86px)]">
+      <div className="absolute inset-0 z-0 flex flex-col justify-between px-5.5 pb-9 pt-13.5 md:px-(--side) md:pb-9 md:pt-[clamp(42px,7vh,86px)]">
         <p className="m-0 text-xs font-bold uppercase tracking-[0.19em]">
           Experience-led Creative Agency · Seoul
         </p>
@@ -66,6 +64,8 @@ export default function Hero() {
           </span>
         </div>
       </div>
-    </section>
+      <div className="absolute inset-0 z-[-2] bg-[linear-gradient(90deg,rgba(24,21,19,.83)_0%,rgba(24,21,19,.42)_58%,rgba(24,21,19,.2)_100%)]" />
+      <div className="absolute inset-0 z-[-1] bg-[linear-gradient(0deg,rgba(24,21,19,.55),transparent_45%)]" />
+    </main>
   );
 }

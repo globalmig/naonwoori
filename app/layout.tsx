@@ -5,8 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "나온우리 | 공간과 미디어를 잇는 통합 전시·행사 대행사",
-    template: "%s | 나온우리",
+    default: "naonwoori · 공간과 미디어를 잇는 통합 전시·행사 대행사",
+    template: "%s · 나온우리",
   },
   description:
     "2004년부터 축적한 오프라인 전시·이벤트 현장 노하우에 디지털·미디어 기술을 접목한 통합 스페이스 마케팅 전문 기업 (주)나온우리입니다. 현대자동차, 기아, 제네시스 등 주요 브랜드의 모터쇼·체험형 프로모션·미디어 행사를 성공적으로 수행합니다.",

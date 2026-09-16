@@ -60,10 +60,10 @@ export default function Work() {
           01 · Selected Work
         </p>
         <div>
-          <h2 className="m-0 max-w-260 text-[clamp(42px,6.1vw,96px)] font-semibold leading-[0.98] tracking-[-0.055em]">
-            Experiences,
+          <h2 className="m-0 max-w-260 text-[clamp(42px,6.1vw,96px)] font-[650] uppercase leading-[0.98] tracking-[-0.055em]">
+            EXPERIENCES,
             <br />
-            made real.
+            MADE REAL.
           </h2>
           <p className="m-0 mt-4.5 max-w-140 text-lg leading-[1.7] text-brand-sub-dark">
             사람이 직접 만난 브랜드의 순간들.
@@ -81,7 +81,7 @@ export default function Work() {
                   alt={project.alt}
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:saturate-75"
+                  className="object-cover transition-[scale,filter] duration-750 ease-[cubic-bezier(0.2,0.6,0.2,1)] group-hover:scale-[1.035] group-hover:saturate-[0.78]"
                 />
                 <span className="absolute left-4 top-4 grid h-8.5 w-8.5 place-items-center rounded-full bg-[rgba(33,29,26,.78)] text-[11px] text-white">
                   {project.no}

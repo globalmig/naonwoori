@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   { label: "ABOUT", href: "#about" },
-  { label: "SERVICES", href: "#capabilities" },
   { label: "WORK", href: "#work" },
+  { label: "SERVICES", href: "#capabilities" },
   { label: "CONTACT", href: "#contact" },
 ];
 
@@ -28,7 +28,7 @@ export default function Header() {
   const closeNav = () => setOpen(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex min-h-19 items-center justify-between gap-8 border-b border-(--line) bg-sub-light px-5.5 py-4.5 md:min-h-23.5 md:justify-start md:gap-[clamp(72px,8.5vw,148px)] md:px-(--side) md:py-5">
+    <header className="fixed inset-x-0 top-0 z-50 flex min-h-19 items-center justify-between gap-8 border-b border-(--line) bg-white px-5.5 py-4.5 md:min-h-23.5 md:justify-start md:gap-[clamp(72px,8.5vw,148px)] md:px-(--side) md:py-5">
       <Link
         href="#top"
         aria-label="나온우리 홈"
@@ -64,7 +64,7 @@ export default function Header() {
           <Link
             key={item.href}
             href={item.href}
-            className="group relative w-auto py-1.25 text-[15px] font-semibold tracking-widest text-brand"
+            className="group relative w-auto py-1.25 text-[15px] font-bold tracking-widest text-brand"
           >
             {item.label}
             <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px origin-right scale-x-0 bg-brand transition-transform duration-300 ease-out group-hover:origin-left group-hover:scale-x-100" />
@@ -89,6 +89,22 @@ export default function Header() {
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
+        <button
+          type="button"
+          onClick={closeNav}
+          aria-label="메뉴 닫기"
+          className="absolute right-5.5 top-4.5 flex h-9 w-9 cursor-pointer items-center justify-center text-brand"
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path
+              d="M3 3L15 15M15 3L3 15"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
+
         {NAV_ITEMS.map((item) => (
           <Link
             key={item.href}

@@ -1,9 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
-// TODO: 텍스트를 실제 로고 이미지(next/image)로 교체
-const PARTNERS = ["HYUNDAI", "KIA", "GENESIS", "CHEIL", "INNOCEAN"];
+const PARTNERS = [
+  { name: "Hyundai", src: "/images/partner/ref-hyundai.png" },
+  { name: "Kia", src: "/images/partner/ref-kia.png" },
+  { name: "Cadillac", src: "/images/partner/ref-cadillac.png" },
+  { name: "Mercedes-Benz", src: "/images/partner/ref-mercedes.png" },
+  { name: "Porsche", src: "/images/partner/ref-porsche.png" },
+  { name: "Volvo", src: "/images/partner/ref-volvo.png" },
+];
 const LOOP = [...PARTNERS, ...PARTNERS];
 const DURATION = PARTNERS.length * 5;
 
@@ -13,11 +20,8 @@ export default function Partners() {
   return (
     <section
       aria-label="주요 파트너"
-      className="overflow-hidden border-y border-(--line) py-13.5"
+      className="overflow-hidden py-13.5"
     >
-      <p className="m-0 mb-8.5 px-5.5 text-[11px] tracking-[0.17em] text-brand-sub md:px-(--side)">
-        SELECTED CLIENTS &amp; PARTNERS
-      </p>
 
       <div className="overflow-hidden">
         <motion.div
@@ -26,13 +30,16 @@ export default function Partners() {
           animate={reduceMotion ? undefined : { x: ["0%", "-50%"] }}
           transition={{ duration: DURATION, repeat: Infinity, ease: "linear" }}
         >
-          {LOOP.map((name, i) => (
-            <span key={`${name}-${i}`} className="flex shrink-0 items-center gap-11">
-              <span className="cursor-default text-[clamp(19px,2.25vw,34px)] font-semibold tracking-tight opacity-100 transition-opacity duration-300 hover:opacity-40">
-                {name}
-              </span>
-              <i className="h-1.25 w-1.25 shrink-0 rounded-full bg-brand-point" />
-            </span>
+          {LOOP.map((partner, i) => (
+              <div key={`${partner.name}-${i}`} className="relative h-50 w-50 shrink-0 cursor-default opacity-100 transition-opacity duration-300 hover:opacity-50">
+                <Image
+                  src={partner.src}
+                  alt={partner.name}
+                  fill
+                  sizes="200px"
+                  className="object-contain"
+                />
+              </div>
           ))}
         </motion.div>
       </div>
