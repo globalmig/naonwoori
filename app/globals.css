@@ -1,26 +1,111 @@
 @import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable.css";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #211d1a;
+
+  --color-naonwoori-brown: #3a322c; /* Main Color - Naonwoori Brown */
+  --color-naonwoori-silver: #bbbbbb; /* Main Color - Silver */
+  --color-naonwoori-sub-light: #efeae4; /* Sub Color */
+  --color-naonwoori-sub: #c2b7a9; /* Sub Color */
+  --color-naonwoori-sub-dark: #746a63; /* Sub Color */
+  --color-naonwoori-point: #c0d6d8; /* Point Color */
+  --color-naonwoori-ink: #211d1a; /* Base text ink */
+
+  /* Layout tokens shared across sections */
+  --side: clamp(22px, 5vw, 76px);
+  --line: rgba(58, 50, 44, 0.2);
+  --line-strong: rgba(58, 50, 44, 0.42);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-brand: var(--color-naonwoori-brown);
+  --color-brand-silver: var(--color-naonwoori-silver);
+  --color-brand-sub-light: var(--color-naonwoori-sub-light);
+  --color-brand-sub: var(--color-naonwoori-sub);
+  --color-brand-sub-dark: var(--color-naonwoori-sub-dark);
+  --color-brand-point: var(--color-naonwoori-point);
+  --color-ink: var(--color-naonwoori-ink);
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Malgun Gothic", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Fluid root font-size: text-sm/text-lg 등 rem 기반 Tailwind 유틸리티가
+     뷰포트 폭(320~1920px)에 따라 15~18px 사이로 자동 스케일링되도록 함 */
+  font-size: clamp(15px, 14.4px + 0.1875vw, 18px);
+}
+
+section {
+  scroll-margin-top: 4.75rem; /* mobile header height (min-h-19) */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  padding-top: 4.75rem; /* offset for fixed header (mobile) */
+}
+
+@media (min-width: 768px) {
+  section {
+    scroll-margin-top: 5.875rem; /* desktop header height (md:min-h-23.5) */
+  }
+
+  body {
+    padding-top: 5.875rem; /* offset for fixed header (desktop) */
+  }
+}
+
+::selection {
+  color: var(--color-naonwoori-brown);
+  background: var(--color-naonwoori-point);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  animation: showreel 18s infinite;
+}
+
+@keyframes showreel {
+  0%,
+  27% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  34%,
+  93% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-slide {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero-slide:not(:first-child) {
+    display: none;
+  }
 }
